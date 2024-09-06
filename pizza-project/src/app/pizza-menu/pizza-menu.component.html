@@ -1,0 +1,98 @@
+<h1 class="title">Pizza</h1>
+
+<div class="accordion">
+  <div *ngFor="let item of items" class="accordion-item">
+    <div class="accordion-header" (click)="toggleAccordion(item.itemId)">
+      <h4>{{ item.name }}</h4>
+    </div>
+    
+    <div
+      class="accordion-content"
+      [ngClass]="{ active: activeItem === item.itemId }"
+    >
+      <div *ngFor="let size of sizes" class="form-group">
+        <label for="size-{{ item.itemId }}-{{ size.sizeId }}"
+          >{{ size.name }}
+        </label>
+        <input
+          id="size-{{ item.itemId }}-{{ size.sizeId }}"
+          type="checkbox"
+          [checked]="isSizeSelected(item.itemId, size.sizeId)"
+          (change)="toggleSize(item.itemId, size.sizeId, $event)"
+        />
+        <div class="price-container">
+            <span class="dollar-sign">$</span>
+            <input
+            type="number"
+            class="price-input"
+            [ngModel]="getPrice(item.itemId, size.sizeId)"
+            [disabled]="!isSizeSelected(item.itemId, size.sizeId)"
+            (ngModelChange)="
+              onPriceInputChange(item.itemId, size.sizeId, $event)
+            "
+          />
+        </div>
+        <div class="price-input-container"></div>
+      </div>
+    </div>
+
+    <button
+      *ngIf="editedPrices[item.itemId]"
+      class="undo-button"
+      (click)="resetItem(item.itemId)"
+    >
+      &#8635;
+    </button>
+  </div>
+</div>
+
+
+
+
+<!-- 
+<h1 class="title">Pizza</h1>
+
+<div class="accordion">
+  <div *ngFor="let item of items" class="accordion-item">
+    <div class="accordion-header" (click)="toggleAccordion(item.itemId)">
+      <h4>{{ item.name }}</h4>
+    </div>
+    
+    <div
+      class="accordion-content"
+      [ngClass]="{ active: activeItem === item.itemId }"
+    >
+      <div *ngFor="let size of sizes" class="form-group">
+        <input
+          id="size-{{ item.itemId }}-{{ size.sizeId }}"
+          type="checkbox"
+          [checked]="isSizeSelected(item.itemId, size.sizeId)"
+          (change)="toggleSize(item.itemId, size.sizeId, $event)"
+        />
+        <label for="size-{{ item.itemId }}-{{ size.sizeId }}"
+          >{{ size.name }}
+          <input
+            type="number"
+            class="price-input"
+            [ngModel]="getPrice(item.itemId, size.sizeId)"
+            [disabled]="!isSizeSelected(item.itemId, size.sizeId)"
+            (ngModelChange)="
+              onPriceInputChange(item.itemId, size.sizeId, $event)
+            "
+          />$
+        </label>
+        <div class="price-input-container"></div>
+      </div>
+    </div>
+
+
+
+    <button
+      *ngIf="editedPrices[item.itemId]"
+      class="undo-button"
+      (click)="resetItem(item.itemId)"
+    >
+      &#8635;
+    </button>
+  </div>
+</div> -->
