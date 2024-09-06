@@ -47,18 +47,7 @@ export class PizzaMenuComponent implements OnInit {
     this.prices = this.pizzaService.getPrices();
     this.editedPrices[itemId] = false;
 
-    this.items.forEach(item => {
-      if (item.itemId === itemId) {
-        this.sizes.forEach(size => {
-          if (this.isSizeSelected(itemId, size.sizeId)) {
-            // Ensure that the size is selected only if its price is greater than 0
-            this.pizzaService.updatePrice(itemId, size.sizeId, this.pizzaService.getOriginalPrice(itemId, size.sizeId));
-          } else {
-            this.pizzaService.updatePrice(itemId, size.sizeId, 0);
-          }
-        });
-      }
-    });
+   
   }
 
   isSizeSelected(itemId: number, sizeId: number): boolean {
@@ -79,4 +68,3 @@ export class PizzaMenuComponent implements OnInit {
 }
 
 
-//comment 

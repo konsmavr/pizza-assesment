@@ -19,27 +19,28 @@
   
   .accordion-content {
     padding: 16px;
-    background-color: #e8f2ff;
     display: none;
-    justify-content: center;
+    justify-content: start;
+    justify-content: space-between;
   }
   
   .accordion-content.active {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: flex;
+      align-items: start; 
    
   }
   
   .form-group {
     display: flex;
+    text-align: center;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
     max-width: 400px;
     margin-bottom: 12px;
   }
   
-  label{
+  .item{
       margin-bottom: 8px;
       text-align: center;
       display: flex;
@@ -82,11 +83,11 @@
   .price-input:focus {
       outline: none;
     }
-  
+
   input[type="checkbox"] {
     margin-bottom: 8px;
     accent-color: #007bff;
-  }
+  } 
   
   .undo-button {
       background-color: transparent;
@@ -114,97 +115,4 @@
     max-width: 400px;
   }
   
-  /* .title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 16px;
-      text-align: center; 
-    }
-    
-    .accordion-item {
-      border: 1px solid #e0e0e0;
-      margin-bottom: 8px;
-      border-radius: 4px;
-    }
-    
-    .accordion-header {
-      padding: 10px;
-      background-color: #f0f4fa;
-      cursor: pointer;
-      font-weight: bold;
-      text-align: center; 
-    }
-    
-    .accordion-content {
-      padding: 16px;
-      background-color: #e8f2ff;
-      display: none;
-      justify-content: center; 
-    }
-    
-    .accordion-content.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .form-group {
-      display: flex;
-      justify-content: space-between; 
-      width: 100%;
-      max-width: 400px; 
-      margin-bottom: 12px;
-    }
-    
-  
-    .size-container {
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-    }
-    
-    .price-input {
-      width: 60px;
-      padding: 4px;
-      text-align: center;
-      border: 1px solid #d1d1d1;
-      border-radius: 4px;
-      background-color: #f4f4f4;
-      margin-top: 4px;
-    }
-    
-    input[type="checkbox"] {
-      margin-bottom: 8px; 
-      accent-color: #007bff;
-    }
-    
-    .undo-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin-top: 16px;
-      align-self: center; 
-    }
-    
-    .undo-icon {
-      width: 16px;
-      height: 16px;
-      fill: #333;
-    }
-    
-    .undo-icon path {
-      fill: #007bff;
-    }
-    
-    .accordion {
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-    }
-    
-    .accordion-item {
-      width: 100%; 
-      max-width: 400px; 
-    }
-     */
   
